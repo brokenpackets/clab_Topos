@@ -1,0 +1,52 @@
+name: srv6_uSID
+
+topology:
+  nodes:
+    leaf1:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/leaf1.conf
+    leaf2:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/leaf2.conf
+    leaf3:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/leaf3.conf
+    spine1:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/spine1.conf
+    spine2:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/spine2.conf
+    HOST1:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/HOST1.conf
+    HOST2:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/HOST2.conf
+    HOST3:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/HOST3.conf
+    HOST4:
+      kind: arista_ceos
+      image: ceos:4.34.2.1F
+      startup-config: ./configs/HOST4.conf
+
+  links:
+    - endpoints: ["spine1:eth1", "leaf1a:eth1"]
+    - endpoints: ["spine1:eth2", "leaf2a:eth1"]
+    - endpoints: ["spine1:eth3", "leaf3a:eth1"]
+    - endpoints: ["spine2:eth1", "leaf1a:eth2"]
+    - endpoints: ["spine2:eth2", "leaf2a:eth2"]
+    - endpoints: ["spine2:eth3", "leaf3a:eth2"]
+    - endpoints: ["leaf1a:eth3", "HOST1:eth1"]
+    - endpoints: ["leaf2a:eth3", "HOST2:eth1"]
+    - endpoints: ["leaf3a:eth3", "HOST3:eth1"]
+    - endpoints: ["leaf3a:eth4", "HOST4:eth1"]
