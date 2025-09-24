@@ -22,31 +22,31 @@ topology:
       kind: arista_ceos
       image: ceos:4.34.2.1F
       startup-config: ./configs/spine2.conf
-    HOST1:
+    host1:
       kind: arista_ceos
       image: ceos:4.34.2.1F
-      startup-config: ./configs/HOST1.conf
-    HOST2:
+      startup-config: ./configs/host1.conf
+    host2:
       kind: arista_ceos
       image: ceos:4.34.2.1F
-      startup-config: ./configs/HOST2.conf
-    HOST3:
+      startup-config: ./configs/host2.conf
+    host3:
       kind: arista_ceos
       image: ceos:4.34.2.1F
-      startup-config: ./configs/HOST3.conf
-    HOST4:
+      startup-config: ./configs/host3.conf
+    host4:
       kind: arista_ceos
       image: ceos:4.34.2.1F
-      startup-config: ./configs/HOST4.conf
+      startup-config: ./configs/host4.conf
 
   links:
-    - endpoints: ["spine1:eth1", "leaf1a:eth1"]
-    - endpoints: ["spine1:eth2", "leaf2a:eth1"]
-    - endpoints: ["spine1:eth3", "leaf3a:eth1"]
-    - endpoints: ["spine2:eth1", "leaf1a:eth2"]
-    - endpoints: ["spine2:eth2", "leaf2a:eth2"]
-    - endpoints: ["spine2:eth3", "leaf3a:eth2"]
-    - endpoints: ["leaf1a:eth3", "HOST1:eth1"]
-    - endpoints: ["leaf2a:eth3", "HOST2:eth1"]
-    - endpoints: ["leaf3a:eth3", "HOST3:eth1"]
-    - endpoints: ["leaf3a:eth4", "HOST4:eth1"]
+    - endpoints: ["spine1:eth1", "leaf1:eth1"]
+    - endpoints: ["spine1:eth2", "leaf2:eth1"]
+    - endpoints: ["spine1:eth3", "leaf3:eth1"]
+    - endpoints: ["spine2:eth1", "leaf1:eth2"]
+    - endpoints: ["spine2:eth2", "leaf2:eth2"]
+    - endpoints: ["spine2:eth3", "leaf3:eth2"]
+    - endpoints: ["leaf1:eth3", "host1:eth1"]
+    - endpoints: ["leaf2:eth3", "host2:eth1"]
+    - endpoints: ["leaf3:eth3", "host3:eth1"]
+    - endpoints: ["leaf3:eth4", "host4:eth1"]
