@@ -1,0 +1,9 @@
+Simplified clab topology to test SRv6 uSID use case for AI workloads. Note that in "real life", this will require a dedicated controller and for the GPU NICs to be a tunnel endpoint.
+
+Simple Test, from host1:
+ping srv6 sid fc00:1:333:: via segment-list fc00:1:101:11:103:: source lo100
+
+Evaluate SRv6 removing segment-list hops along the way with tcpdump:
+bash tcpdump -i <interface> -vvvnn
+
+Eventually you should see the final payload of 2001:db8:1::21 > fc00:1:333:: when it reaches host3.
