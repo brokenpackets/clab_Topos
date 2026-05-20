@@ -4,39 +4,39 @@ topology:
   nodes:
     leaf1:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/leaf1.conf
     leaf2:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/leaf2.conf
     leaf3:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/leaf3.conf
     spine1:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/spine1.conf
     spine2:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/spine2.conf
     host1:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/host1.conf
     host2:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/host2.conf
     host3:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/host3.conf
     host4:
       kind: arista_ceos
-      image: ceos:4.34.2.1F
+      image: arista/ceos:latest
       startup-config: ./configs/host4.conf
 
   links:
